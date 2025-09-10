@@ -26,6 +26,7 @@ export const MessageForm = () => {
       console.error("Error sending message:", error);
       alert("Failed to send message.");
     }
+    
     setName("");
     setMessage("");
   };
