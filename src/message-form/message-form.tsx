@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from "react";
 
+//todo: сохранен чтобы заюзать запрос к боту
+
 const BOT_TOKEN = import.meta.env.VITE_BOT_TOKEN;
 const USER_ID = import.meta.env.VITE_USER_ID;
 
@@ -26,7 +28,7 @@ export const MessageForm = () => {
       console.error("Error sending message:", error);
       alert("Failed to send message.");
     }
-    
+
     setName("");
     setMessage("");
   };
