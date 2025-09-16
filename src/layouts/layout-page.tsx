@@ -1,5 +1,10 @@
-// import React from "react";
+import { type JSX } from "react";
+import { StyledLayout } from "./styles";
 
-// export const LayoutPage = ({ children }) => {
-//   return <div style={{ margin: "40px" }}>{children}</div>;
-// };
+type LayoutPageProps = {
+  children: JSX.Element;
+};
+
+export const LayoutPage = ({ children }: LayoutPageProps) => {
+  return <StyledLayout>{children}</StyledLayout>;
+};
