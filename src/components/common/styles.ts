@@ -12,8 +12,6 @@ export const StyledBottomBar = styled.div`
 export const StyledBottomBarButton = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 0;
   align-items: center;
   justify-content: center;
   width: 100%;
