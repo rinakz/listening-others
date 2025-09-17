@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { MainPage } from "./pages/main-page";
-import { TaskPage } from "./pages/task-page";
+import { TaskPage } from "./pages/task-page/task-page";
 import { Header } from "./components/common/header";
 import { BottomBar } from "./components/common/bottom-bar";
 import { TasksPage } from "./pages/tasks-page/tasks-page";

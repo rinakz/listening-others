@@ -6,12 +6,15 @@ import {
   StyledDoneContainer,
   StyledInProcessContainer,
 } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 type TasksStoryProps = {
   startDate: string;
 };
 
 export const TasksStory = ({ startDate }: TasksStoryProps) => {
+  const navigate = useNavigate();
+
   const formattedDate = Array.from({ length: 30 }, (_, index) => {
     const currentDate: Date = new Date(startDate ?? "");
     currentDate.setDate(currentDate.getDate() + index);
@@ -23,6 +26,7 @@ export const TasksStory = ({ startDate }: TasksStoryProps) => {
       <StyledBodyContent>
         {formattedDate.map((day, idx) => (
           <div
+            onClick={() => navigate(`${idx + 1}`)}
             style={{
               display: "flex",
               justifyContent: "space-between",
