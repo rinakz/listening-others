@@ -12,7 +12,7 @@ export const StyledNextButton = styled(Flex)`
 `;
 
 export const StyledPromptCard = styled(Card)`
-  min-width: 200;
-  max-width: 300;
-  font-size: 13;
+  min-width: 200px;
+  max-width: 300px;
+  font-size: 13px;
 `;
