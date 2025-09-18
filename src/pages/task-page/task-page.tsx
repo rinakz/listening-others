@@ -7,22 +7,24 @@ import { FirstStep } from "../../components/features/tasks-steps/first-step";
 import { SecondStep } from "../../components/features/tasks-steps/second-step";
 import { ThirdStep } from "../../components/features/tasks-steps/third-step";
 import { FourthStep } from "../../components/features/tasks-steps/fourth-step";
+import { FifthStep } from "../../components/features/tasks-steps/fifth-step";
 
 export const TaskPage = () => {
   const { id } = useParams();
   const [step, setStep] = useState(1);
-  const [steps, setSteps] = useState(5);
+  const [steps] = useState(5);
   const [questionsData, setQuestionsData] = useState({});
 
   const nextButtonClick = (stepProp: number, data?: string[]) => {
-    console.log(questionsData, "LLLL");
     setStep(stepProp);
     if (data) {
       setQuestionsData(() => ({ ...questionsData, [stepProp - 1]: data }));
     }
   };
 
-  console.log(questionsData);
+  const sendQuestions = () => {
+    console.log(questionsData);
+  };
 
   return (
     <LayoutPage>
@@ -43,7 +45,9 @@ export const TaskPage = () => {
         {step === 4 && (
           <FourthStep nextButtonClick={nextButtonClick} day={Number(id)} />
         )}
-        {step === 5 && <div></div>}
+        {step === 5 && (
+          <FifthStep sendQuestions={sendQuestions} day={Number(id)} />
+        )}
       </Flex>
     </LayoutPage>
   );

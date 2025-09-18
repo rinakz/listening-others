@@ -12,7 +12,6 @@ export const TasksProgress = ({ startDate }: TasksProgressProps) => {
   const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
   const percent = Number(((differenceInDays / 30) * 100).toFixed());
 
-  console.log(differenceInDays);
   return (
     <Card>
       <StyledProgressContainer>

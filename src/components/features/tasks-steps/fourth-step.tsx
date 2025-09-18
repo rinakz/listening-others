@@ -40,7 +40,7 @@ export const FourthStep = ({
         </div>
       </Flex>
       <Flex style={{ width: "inherit" }}>
-        <StyledNextButton onClick={() => nextButtonClick(3)} justify="end">
+        <StyledNextButton onClick={() => nextButtonClick(5)} justify="end">
           ДАЛЕЕ
           <RightOutlined />
         </StyledNextButton>
