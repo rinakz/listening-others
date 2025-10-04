@@ -20,7 +20,19 @@ export const SixthStep = ({ nextButtonClick, day }: StepTypeProps) => {
         align="center"
         gap={24}
       >
-        <img src="/fox3.png" style={{ width: 150, height: 173 }} />
+        <div
+          style={{
+            background: "#fef9f3",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "12px",
+            flex: 1,
+            width: "100%",
+          }}
+        >
+          <img src="/fox3.png" style={{ width: 150, height: 173 }} />
+        </div>
         <Typography style={{ color: "#8bc4d1", fontSize: "14px" }}>
           <b>
             За что можно быть благодарным другим людям за их проявление эмпатии.

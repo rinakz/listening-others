@@ -20,7 +20,19 @@ export const FifthStep = ({ nextButtonClick, day }: StepTypeProps) => {
         align="center"
         gap={24}
       >
-        <img src="/fox.png" style={{ width: 200, height: 213 }} />
+        <div
+          style={{
+            background: "#fef9f3",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "12px",
+            width: "100%",
+            flex: 1,
+          }}
+        >
+          <img src="/fox.png" style={{ width: 200, height: 213 }} />
+        </div>
         <Typography style={{ color: "#8bc4d1", fontSize: "14px" }}>
           <em>
             Это задание поможет тебе осознанно развивать способность видеть мир

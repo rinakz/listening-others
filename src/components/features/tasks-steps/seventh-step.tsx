@@ -20,7 +20,19 @@ export const SeventhStep = ({ nextButtonClick }: StepTypeProps) => {
         align="center"
         gap={24}
       >
-        <img src="/fox2.png" style={{ width: 180, height: 215 }} />
+        <div
+          style={{
+            background: "#fef9f3",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "12px",
+            flex: 1,
+            width: "100%",
+          }}
+        >
+          <img src="/fox2.png" style={{ width: 180, height: 215 }} />
+        </div>
         <Typography style={{ color: "#8bc4d1", fontSize: "14px" }}>
           <b>
             {" "}
