@@ -1,5 +1,5 @@
 import { Flex, Tag, Typography } from "antd";
-import { RightOutlined } from "@ant-design/icons";
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 import type { StepTypeProps } from "./types";
 import { StyledNextButton } from "./styles";
 import { SITUATIONS } from "./constants";
@@ -33,13 +33,22 @@ export const FourthStep = ({
         </Tag>
         <div style={{ textAlign: "center" }}>
           <Flex justify="center" wrap gap={12}>
-            <Typography style={{ fontSize: 18 }}>
+            <Typography style={{ fontSize: 16, whiteSpace: "break-spaces" }}>
               {SITUATIONS[Number(day) - 1]}
             </Typography>
           </Flex>
         </div>
       </Flex>
-      <Flex style={{ width: "inherit" }}>
+      <Flex
+        style={{
+          width: "inherit",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <StyledNextButton onClick={() => nextButtonClick(3)} justify="end">
+          <LeftOutlined /> НАЗАД
+        </StyledNextButton>
         <StyledNextButton onClick={() => nextButtonClick(5)} justify="end">
           ДАЛЕЕ
           <RightOutlined />

@@ -5,6 +5,7 @@ import {
   HeartOutlined,
   SmileOutlined,
   MessageOutlined,
+  LeftOutlined,
 } from "@ant-design/icons";
 import type { StepTypeProps } from "./types";
 import { StyledNextButton, StyledPromptCard } from "./styles";
@@ -18,8 +19,13 @@ export const ThirdStep = ({ nextButtonClick }: StepTypeProps) => {
       justify="space-between"
       gap={24}
     >
-      <Flex style={{ width: "inherit" }} align="center" vertical gap={24}>
-        <Flex wrap justify="center" gap={12}>
+      <Flex
+        style={{ width: "inherit", height: "100%" }}
+        align="center"
+        vertical
+        gap={24}
+      >
+        <Flex style={{ height: "100%" }} wrap justify="center" gap={12}>
           <StyledPromptCard
             size="small"
             style={{
@@ -73,7 +79,16 @@ export const ThirdStep = ({ nextButtonClick }: StepTypeProps) => {
           </StyledPromptCard>
         </Flex>
       </Flex>
-      <Flex style={{ width: "inherit" }}>
+      <Flex
+        style={{
+          width: "inherit",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <StyledNextButton onClick={() => nextButtonClick(2)} justify="end">
+          <LeftOutlined /> НАЗАД
+        </StyledNextButton>
         <StyledNextButton onClick={() => nextButtonClick(4)} justify="end">
           ДАЛЕЕ
           <RightOutlined />

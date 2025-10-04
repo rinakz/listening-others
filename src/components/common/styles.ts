@@ -7,6 +7,8 @@ export const StyledBottomBar = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  border-top: 1px solid #d3d3d3;
+  background: white;
 `;
 
 export const StyledBottomBarButton = styled.div`

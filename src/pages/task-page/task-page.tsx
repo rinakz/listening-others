@@ -1,34 +1,50 @@
 import { Flex } from "antd";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { StyledProgress } from "./styles";
-import { LayoutPage } from "../../layouts/layout-page";
-import { FirstStep } from "../../components/features/tasks-steps/first-step";
-import { SecondStep } from "../../components/features/tasks-steps/second-step";
-import { ThirdStep } from "../../components/features/tasks-steps/third-step";
-import { FourthStep } from "../../components/features/tasks-steps/fourth-step";
-import { FifthStep } from "../../components/features/tasks-steps/fifth-step";
+import { LayoutTaskPage } from "../../layouts/layout-page";
+import {
+  FifthStep,
+  FirstStep,
+  FourthStep,
+  SecondStep,
+  SeventhStep,
+  SixthStep,
+  ThirdStep,
+} from "../../components/features/tasks-steps";
 
 export const TaskPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [step, setStep] = useState(1);
-  const [steps] = useState(5);
+  const [steps, setSteps] = useState(5);
   const [questionsData, setQuestionsData] = useState({});
 
+  useEffect(() => {
+    if (Number(id) < 15) {
+      setSteps(5);
+    } else if (Number(id) < 21) {
+      setSteps(6);
+    } else {
+      setSteps(7);
+    }
+  }, [id]);
+
   const nextButtonClick = (stepProp: number, data?: string[]) => {
-    setStep(stepProp);
-    if (data) {
-      setQuestionsData(() => ({ ...questionsData, [stepProp - 1]: data }));
+    if (steps === stepProp - 1) {
+      navigate("/tasks");
+    } else {
+      setStep(stepProp);
+      if (data) {
+        setQuestionsData(() => ({ ...questionsData, [stepProp - 1]: data }));
+      }
     }
   };
 
-  const sendQuestions = () => {
-    console.log(questionsData);
-  };
-
   return (
-    <LayoutPage>
-      <Flex vertical style={{ height: "100%", width: "100%", gap: 48 }}>
+    <LayoutTaskPage>
+      <Flex vertical style={{ height: "100%", width: "100%", gap: 24 }}>
         <StyledProgress
           size={10}
           type="line"
@@ -46,9 +62,15 @@ export const TaskPage = () => {
           <FourthStep nextButtonClick={nextButtonClick} day={Number(id)} />
         )}
         {step === 5 && (
-          <FifthStep sendQuestions={sendQuestions} day={Number(id)} />
+          <FifthStep nextButtonClick={nextButtonClick} day={Number(id)} />
+        )}
+        {step === 6 && (
+          <SixthStep nextButtonClick={nextButtonClick} day={Number(id)} />
+        )}
+        {step === 7 && (
+          <SeventhStep nextButtonClick={nextButtonClick} day={Number(id)} />
         )}
       </Flex>
-    </LayoutPage>
+    </LayoutTaskPage>
   );
 };
