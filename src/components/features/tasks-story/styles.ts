@@ -16,7 +16,7 @@ export const StyledDoneContainer = styled.div`
   color: #bfd9cd;
 
   @media (max-width: 768px) {
-    align-items: start;
+    align-items: center;
   }
 `;
 
@@ -27,7 +27,7 @@ export const StyledInProgressContainer = styled.div`
   color: #f8d7b7;
 
   @media (max-width: 768px) {
-    align-items: start;
+    align-items: center;
   }
 `;
 
@@ -37,6 +37,6 @@ export const StyledInProcessContainer = styled.div`
   color: #d3d3d3;
 
   @media (max-width: 768px) {
-    align-items: start;
+    align-items: center;
   }
 `;
