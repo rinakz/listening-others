@@ -1,10 +1,10 @@
 import { Flex, Typography } from "antd";
 import { StyledNextButton } from "./styles";
 import type { StepTypeProps } from "./types";
-import { RightOutlined, LeftOutlined } from "@ant-design/icons";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 import TextArea from "antd/es/input/TextArea";
 
-export const SeventhStep = ({ nextButtonClick, day }: StepTypeProps) => {
+export const EighthStep = ({ nextButtonClick }: StepTypeProps) => {
   return (
     <Flex
       style={{ height: "100%", width: "inherit" }}
@@ -31,25 +31,21 @@ export const SeventhStep = ({ nextButtonClick, day }: StepTypeProps) => {
             width: "100%",
           }}
         >
-          <img src="/fox3.png" style={{ width: 150, height: 173 }} />
+          <img src="/fox2.png" style={{ width: 180, height: 215 }} />
         </div>
         <Typography style={{ color: "#8bc4d1", fontSize: "14px" }}>
           <b>
-            За что можно быть благодарным другим людям за их проявление эмпатии.
+            {" "}
+            Каждый день фиксируй один эмпатичный поступок — свой или замеченный.
           </b>
           <br />
-          Например:
+          Это может быть простая помощь коллеге или поддержка друга. Например:
           <br />
           <em>
-            ❝ Я благодарен официанту за то что он так внимательно слушал мой
-            заказ ❞
+            ❝ Сегодня я выслушал коллегу, который переживал из-за проекта ❞
           </em>
           <br />
-          <em>
-            ❝ Я благодарен человеку в очереди за то что он уступил мне дорогу ❞
-          </em>
-          <br />
-          Это помогает замечать проявление эмпатии в окружающем мире.
+          Эта практика развивает осознанность и создает теплую атмосферу вокруг.
         </Typography>
 
         <TextArea rows={4} />
@@ -61,22 +57,14 @@ export const SeventhStep = ({ nextButtonClick, day }: StepTypeProps) => {
           justifyContent: "space-between",
         }}
       >
-        <StyledNextButton onClick={() => nextButtonClick(6)} justify="end">
-          <LeftOutlined /> НАЗАД
+        <StyledNextButton onClick={() => nextButtonClick(7)} justify="end">
+          <ArrowLeftOutlined />
+          НАЗАД
         </StyledNextButton>
-        <StyledNextButton onClick={() => nextButtonClick(8)} justify="end">
-          {Number(day) < 21 ? (
-            "ЗАВЕРШИТЬ"
-          ) : (
-            <>
-              <RightOutlined />
-              ДАЛЕЕ
-            </>
-          )}
+        <StyledNextButton onClick={() => nextButtonClick(9)} justify="end">
+          ЗАВЕРШИТЬ
         </StyledNextButton>
       </Flex>
     </Flex>
   );
 };
-
-

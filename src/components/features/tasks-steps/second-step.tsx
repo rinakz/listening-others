@@ -16,9 +16,9 @@ export const SecondStep = ({ nextButtonClick }: StepTypeProps) => {
       gap={48}
     >
       <div style={{ textAlign: "center" }}>
-        <Typography style={{ fontSize: "28px", color: "#8bc4d1" }}>
+        <Typography.Title style={{ fontSize: "28px", color: "#8bc4d1" }}>
           Какие чувства испытал твой партнер сегодня?
-        </Typography>
+        </Typography.Title>
       </div>
 
       <Flex justify="center" wrap gap={12}>

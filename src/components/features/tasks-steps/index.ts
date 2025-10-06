@@ -5,3 +5,4 @@ export { FourthStep } from "../../features/tasks-steps/fourth-step";
 export { FifthStep } from "../../features/tasks-steps/fifth-step";
 export { SixthStep } from "../../features/tasks-steps/sixth-step";
 export { SeventhStep } from "../../features/tasks-steps/seventh-step";
+export { EighthStep } from "../../features/tasks-steps/eight-step";

@@ -1,16 +1,10 @@
-import { Flex } from "antd";
-import {
-  RightOutlined,
-  HistoryOutlined,
-  HeartOutlined,
-  SmileOutlined,
-  MessageOutlined,
-  LeftOutlined,
-} from "@ant-design/icons";
+import { Flex, Typography } from "antd";
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 import type { StepTypeProps } from "./types";
-import { StyledNextButton, StyledPromptCard } from "./styles";
+import { StyledNextButton } from "./styles";
+import { EMPATHY_SKILLS } from "./constants";
 
-export const ThirdStep = ({ nextButtonClick }: StepTypeProps) => {
+export const ThirdStep = ({ nextButtonClick, day }: StepTypeProps) => {
   return (
     <Flex
       style={{ height: "100%", width: "inherit" }}
@@ -22,62 +16,28 @@ export const ThirdStep = ({ nextButtonClick }: StepTypeProps) => {
       <Flex
         style={{ width: "inherit", height: "100%" }}
         align="center"
+        justify="space-between"
         vertical
         gap={24}
       >
-        <Flex style={{ height: "100%" }} wrap justify="center" gap={12}>
-          <StyledPromptCard
-            size="small"
-            style={{
-              background: "#fcecd9",
-            }}
+        <div style={{ display: "flex", flexDirection: "column", gap: "24px", whiteSpace: "break-spaces"  }}>
+          <Typography.Title
+            style={{ fontSize: 28, color: "#8bc4d1", textAlign: "center" }}
           >
-            <HistoryOutlined /> <b>Остановитесь и подумайте:</b>
-            <br />
-            <span style={{ fontSize: "12px" }}>
-              Когда сталкиваетесь с подобной ситуацией, не спешите делать
-              выводы.
-            </span>
-            <br />
-          </StyledPromptCard>
-          <StyledPromptCard
-            size="small"
-            style={{
-              background: "#c9e2e9",
-            }}
+            {EMPATHY_SKILLS[Number(day) - 1].title}
+          </Typography.Title>
+          <Typography.Text style={{ color: "#8bc4d1", fontSize: "16px" }}>
+            — {EMPATHY_SKILLS[Number(day) - 1].definition}
+          </Typography.Text>
+          <Typography.Title
+            style={{ fontSize: 28, color: "#8bc4d1", textAlign: "center" }}
           >
-            <HeartOutlined /> <b>Поставьте себя на место другого человека:</b>{" "}
-            <span style={{ fontSize: "12px" }}>
-              <br />
-              Попробуйте представить, что он чувствует и почему он мог поступить
-              именно так.
-            </span>
-          </StyledPromptCard>
-          <StyledPromptCard
-            size="small"
-            style={{
-              background: "#eaf2ff",
-            }}
-          >
-            <SmileOutlined /> <b>Рассмотрите альтернативные объяснения:</b>
-            <br />
-            <span style={{ fontSize: "12px" }}>
-              Не зацикливайтесь на негативных интерпретациях.
-            </span>
-          </StyledPromptCard>
-          <StyledPromptCard
-            size="small"
-            style={{
-              background: "#f7c7a7",
-            }}
-          >
-            <MessageOutlined /> <b>Проиграйте в голове диалог:</b> <br />
-            <span style={{ fontSize: "12px" }}>
-              Представьте, как бы вы объяснили ситуацию другому человеку, и
-              какие чувства он мог бы испытать.
-            </span>
-          </StyledPromptCard>
-        </Flex>
+            Например:
+          </Typography.Title>
+          <Typography.Text style={{ color: "#8bc4d1", fontSize: "16px" }}>
+            {EMPATHY_SKILLS[Number(day) - 1].example}
+          </Typography.Text>
+        </div>
       </Flex>
       <Flex
         style={{

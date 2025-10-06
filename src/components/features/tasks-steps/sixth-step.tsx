@@ -1,8 +1,8 @@
 import { Flex, Typography } from "antd";
-import { StyledNextButton } from "./styles";
+import { StyledCard, StyledNextButton } from "./styles";
+import { TASKS } from "./constants";
 import type { StepTypeProps } from "./types";
 import { RightOutlined, LeftOutlined } from "@ant-design/icons";
-import TextArea from "antd/es/input/TextArea";
 
 export const SixthStep = ({ nextButtonClick, day }: StepTypeProps) => {
   return (
@@ -27,32 +27,30 @@ export const SixthStep = ({ nextButtonClick, day }: StepTypeProps) => {
             alignItems: "center",
             justifyContent: "center",
             borderRadius: "12px",
-            flex: 1,
             width: "100%",
+            flex: 1,
           }}
         >
-          <img src="/fox3.png" style={{ width: 150, height: 173 }} />
+          <img src="/fox.png" style={{ height: 200 }} />
         </div>
         <Typography style={{ color: "#8bc4d1", fontSize: "14px" }}>
-          <b>
-            За что можно быть благодарным другим людям за их проявление эмпатии.
-          </b>
-          <br />
-          Например:
-          <br />
           <em>
-            ❝ Я благодарен официанту за то что он так внимательно слушал мой
-            заказ ❞
+            Это задание поможет тебе осознанно развивать способность видеть мир
+            глазами других, что является фундаментом эмпатии
           </em>
-          <br />
-          <em>
-            ❝ Я благодарен человеку в очереди за то что он уступил мне дорогу ❞
-          </em>
-          <br />
-          Это помогает замечать проявление эмпатии в окружающем мире.
         </Typography>
 
-        <TextArea rows={4} />
+        <div style={{ textAlign: "center" }}>
+          <StyledCard>
+            <Typography style={{ fontSize: 16, whiteSpace: "break-spaces" }}>
+              {TASKS[Number(day) - 1] ?? (
+                <a href="https://psytests.org/boyko/boemp.html">
+                  Пройдите тест
+                </a>
+              )}
+            </Typography>
+          </StyledCard>
+        </div>
       </Flex>
       <Flex
         style={{
@@ -65,7 +63,7 @@ export const SixthStep = ({ nextButtonClick, day }: StepTypeProps) => {
           <LeftOutlined /> НАЗАД
         </StyledNextButton>
         <StyledNextButton onClick={() => nextButtonClick(7)} justify="end">
-          {Number(day) < 21 ? (
+          {Number(day) < 15 ? (
             "ЗАВЕРШИТЬ"
           ) : (
             <>

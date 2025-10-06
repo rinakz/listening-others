@@ -65,10 +65,18 @@ export const TasksStory = ({ startDate }: TasksStoryProps) => {
             </div>
             {day < TODAY ? (
               <StyledDoneContainer>
-                <CheckOutlined />
-                Выполнено
+                {day.toLocaleDateString() == TODAY.toLocaleDateString() ? (
+                  <StyledInProgressContainer ref={myRef}>
+                    <LoginOutlined /> К заданию
+                  </StyledInProgressContainer>
+                ) : (
+                  <>
+                    <CheckOutlined />
+                    Выполнено {day.toLocaleDateString()}{" "}
+                  </>
+                )}
               </StyledDoneContainer>
-            ) : day.toLocaleDateString() === TODAY.toLocaleDateString() ? (
+            ) : day.toLocaleDateString() == TODAY.toLocaleDateString() ? (
               <StyledInProgressContainer ref={myRef}>
                 <LoginOutlined /> К заданию
               </StyledInProgressContainer>

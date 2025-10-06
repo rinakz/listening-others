@@ -12,9 +12,14 @@ export const StyledNextButton = styled(Flex)`
 `;
 
 export const StyledPromptCard = styled(Card)`
-  min-width: 200px;
-  max-width: 300px;
-  font-size: 13px;
+  max-width: 80%;
+
+  .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    height: 100%;
+  }
 `;
 
 export const StyledEmotionCard = styled(Card)`
@@ -26,5 +31,12 @@ export const StyledEmotionCard = styled(Card)`
       padding: 10px !important;
     }
     width: 150px;
+  }
+`;
+
+export const StyledCard = styled(Card)`
+  background: #faeee0;
+  .ant-card-body {
+    padding: 12px !important;
   }
 `;

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { StyledProgress } from "./styles";
 import { LayoutTaskPage } from "../../layouts/layout-page";
 import {
+  EighthStep,
   FifthStep,
   FirstStep,
   FourthStep,
@@ -18,16 +19,16 @@ export const TaskPage = () => {
   const navigate = useNavigate();
 
   const [step, setStep] = useState(1);
-  const [steps, setSteps] = useState(5);
+  const [steps, setSteps] = useState(6);
   const [questionsData, setQuestionsData] = useState({});
 
   useEffect(() => {
     if (Number(id) < 15) {
-      setSteps(5);
-    } else if (Number(id) < 21) {
       setSteps(6);
-    } else {
+    } else if (Number(id) < 21) {
       setSteps(7);
+    } else {
+      setSteps(8);
     }
   }, [id]);
 
@@ -57,7 +58,9 @@ export const TaskPage = () => {
         />
         {step === 1 && <FirstStep nextButtonClick={nextButtonClick} />}
         {step === 2 && <SecondStep nextButtonClick={nextButtonClick} />}
-        {step === 3 && <ThirdStep nextButtonClick={nextButtonClick} />}
+        {step === 3 && (
+          <ThirdStep nextButtonClick={nextButtonClick} day={Number(id)} />
+        )}
         {step === 4 && (
           <FourthStep nextButtonClick={nextButtonClick} day={Number(id)} />
         )}
@@ -69,6 +72,9 @@ export const TaskPage = () => {
         )}
         {step === 7 && (
           <SeventhStep nextButtonClick={nextButtonClick} day={Number(id)} />
+        )}
+        {step === 8 && (
+          <EighthStep nextButtonClick={nextButtonClick} day={Number(id)} />
         )}
       </Flex>
     </LayoutTaskPage>
