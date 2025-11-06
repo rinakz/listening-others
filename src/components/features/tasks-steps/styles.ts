@@ -13,6 +13,7 @@ export const StyledNextButton = styled(Flex)`
 
 export const StyledPromptCard = styled(Card)`
   max-width: 80%;
+  width: 60%;
 
   .ant-card-body {
     display: flex;
